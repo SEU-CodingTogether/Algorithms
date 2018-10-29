@@ -5,3 +5,5 @@
   - 更新`3.1 暴力美学——排序`
   - 任务：详见每个目录下`markdown`的课后习题。（由于是第一次推送，没有安排编程任务，大家可以直接把答案添加在问题下方（**步骤**: *fork仓库→更改→提交→pull request*）
 
+  > 由于Github的markdown不支持Latex公式渲染，所以提供了对应的PDF（但是PDF里的动图无法看，动图还是要到md文件看（如果clone仓库到本地，推荐用[Typora](https://typora.io/)软件查看md文件）
+
