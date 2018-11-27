@@ -14,17 +14,21 @@ public class Solution {
     //    duplication: 输出数组，判题程序会取duplication[0] 作为重复的数字
     //    这里要特别注意~返回重复的第一个，赋值duplication[0]
     public boolean duplicate(int numbers[],int length,int [] duplication) {
-        boolean flag=false;
+        Map temp_map=new HashMap();
         for(int i=0;i<length;i++){
-            for(int j=i+1;j<length;j++){
-                if(numbers[i]==numbers[j]){
-                    flag=true;
-                    duplication[0]=numbers[i];
-                    return flag;
-                }
+
+            if(temp_map.get(numbers[i])!=null){
+                duplication[0]=numbers[i];
+                return true;
             }
+            else{
+                temp_map.put(numbers[i],numbers[i]);
+            }
+
         }
-        return flag;
+
+
+        return false;
 
     }
     //end
@@ -75,7 +79,7 @@ public class Solution {
         tests[2] = solution.new Test(new int[]{2,3,4,0,9,8,7,10,13},9,false,0);
         tests[3] = solution.new Test(new int[]{},0,false,0);
         tests[4] = solution.new Test(null,0,false,0);
-        tests[5] = solution.new Test(new int[]{2,1,1,2},4,true,2);
+        tests[5] = solution.new Test(new int[]{2,1,1,2},4,true,1);
         tests[6] = solution.new Test(new int[]{1},1,false,0);
         tests[7] = solution.new Test(new int[]{1,1},2,true,1);
         int i = 0;
