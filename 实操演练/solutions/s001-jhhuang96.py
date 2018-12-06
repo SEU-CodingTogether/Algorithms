@@ -11,21 +11,13 @@ def get_first_duplicated_number(numbers):
     #if numbers == None:
     if not numbers:
         return -1
-    uniquenums = list(set(numbers))
-    counts = {}
-    for num in uniquenums:
-        counts.setdefault(num,0)
-
+    dict = {}
+    duplication =[]
     for num in numbers:
-        for keys in counts:
-            if num == keys:
-                counts[keys] += 1
-
-    d = counts.copy()
-    for key, vals in counts.items():
-        if vals == 1:
-            del d[key]
-    duplication = list(d.keys())
+        if num not in dict:
+            dict[num] = 0
+        else:
+            duplication.append(num)
     if duplication:
         return duplication[0]
     else:
